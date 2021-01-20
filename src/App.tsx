@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { MButton } from "demo-sb-react-components";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -25,6 +26,8 @@ export default function App() {
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
+
+        <MButton />
 
         <hr />
 
