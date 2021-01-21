@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { MButton } from "demo-sb-react-components";
+import { CustomButton } from "demo-sb-react-components";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -27,7 +27,9 @@ export default function App() {
           </li>
         </ul>
 
-        <MButton />
+        <CustomButton
+          label="Custom"
+        />
 
         <hr />
 
