@@ -1,6 +1,12 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CustomButton } from "demo-sb-react-components";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCount } from "./redux/reducers/countReducer";
+import {
+  decreaseCountAction,
+  increaseCountAction,
+} from "./redux/actions/countActions";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -11,7 +17,21 @@ import { CustomButton } from "demo-sb-react-components";
 // making sure things like the back button and bookmarks
 // work properly.
 
+const styles: Record<string, CSSProperties> = {
+  countActionButton: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 30,
+    width: 60,
+    margin: 10,
+    backgroundColor: "lightblue",
+  },
+};
+
 export default function App() {
+  const count = useSelector(selectCount);
+  const dispatch = useDispatch();
   return (
     <Router>
       <div>
@@ -27,9 +47,29 @@ export default function App() {
           </li>
         </ul>
 
-        <CustomButton
-          label="Custom"
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={styles.countActionButton}
+            onClick={() => dispatch(decreaseCountAction())}
+          >
+            MINUS
+          </div>
+          <div>COUNT: {count}</div>
+          <div
+            style={styles.countActionButton}
+            onClick={() => dispatch(increaseCountAction())}
+          >
+            ADD
+          </div>
+        </div>
+
+        <CustomButton label="Custom" />
 
         <hr />
 
