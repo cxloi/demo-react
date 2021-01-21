@@ -18,20 +18,20 @@ import {
 // work properly.
 
 const styles: Record<string, CSSProperties> = {
-  countActionButton: {
+  countContainer: {
     display: "flex",
-    justifyContent: "center",
+    flexDirection: "row",
     alignItems: "center",
-    height: 30,
-    width: 60,
-    margin: 10,
-    backgroundColor: "lightblue",
+  },
+  countTextContainer: {
+    width: 120,
   },
 };
 
 export default function App() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
+
   return (
     <Router>
       <div>
@@ -47,26 +47,16 @@ export default function App() {
           </li>
         </ul>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={styles.countActionButton}
+        <div style={styles.countContainer}>
+          <CustomButton
+            label="-"
             onClick={() => dispatch(decreaseCountAction())}
-          >
-            MINUS
-          </div>
-          <div>COUNT: {count}</div>
-          <div
-            style={styles.countActionButton}
+          />
+          <div style={styles.countTextContainer}>COUNT: {count}</div>
+          <CustomButton
+            label="+"
             onClick={() => dispatch(increaseCountAction())}
-          >
-            ADD
-          </div>
+          />
         </div>
 
         <CustomButton label="Custom" />
