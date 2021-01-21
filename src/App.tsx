@@ -7,6 +7,7 @@ import {
   decreaseCountAction,
   increaseCountAction,
 } from "./redux/actions/countActions";
+import Home from "./pages/Home";
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -88,14 +89,6 @@ export default function App() {
 
 // You can think of these components as "pages"
 // in your app.
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
 
 function About() {
   return (
