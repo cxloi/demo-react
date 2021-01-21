@@ -10,7 +10,7 @@ const INITIAL_STATE: CountState = {
   count: 0,
 };
 
-export default function (
+export default function countReducer(
   state = INITIAL_STATE,
   action: CountActionTypes,
 ): CountState {
