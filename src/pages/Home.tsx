@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectCount } from "../redux/reducers/countReducer";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectCount } from '../redux/selectors';
 
 const Home = () => {
   const count = useSelector(selectCount);
@@ -8,7 +8,10 @@ const Home = () => {
   return (
     <div>
       <h2>HOME</h2>
-      <div>COUNT: {count}</div>
+      <div>
+        COUNT:
+        {count}
+      </div>
     </div>
   );
 };

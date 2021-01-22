@@ -1,13 +1,13 @@
-import React, { CSSProperties } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { CustomButton } from "demo-sb-react-components";
-import { useDispatch, useSelector } from "react-redux";
-import { selectCount } from "./redux/reducers/countReducer";
+import React, { CSSProperties } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { CustomButton } from 'demo-sb-react-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCount } from './redux/selectors';
 import {
   decreaseCountAction,
   increaseCountAction,
-} from "./redux/actions/countActions";
-import Home from "./pages/Home";
+} from './redux/actions/countActions';
+import Home from './pages/Home';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -20,14 +20,33 @@ import Home from "./pages/Home";
 
 const styles: Record<string, CSSProperties> = {
   countContainer: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   countTextContainer: {
     width: 120,
   },
 };
+
+// You can think of these components as "pages"
+// in your app.
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Dashboard() {
+  return (
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+  );
+}
 
 export default function App() {
   const count = useSelector(selectCount);
@@ -84,24 +103,5 @@ export default function App() {
         </Switch>
       </div>
     </Router>
-  );
-}
-
-// You can think of these components as "pages"
-// in your app.
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
   );
 }

@@ -1,6 +1,5 @@
-import { CountActionTypes } from "../actions/countActions";
-import { DECREASE_COUNT, INCREASE_COUNT } from "../actions/types";
-import { RootReducerState } from "./index";
+import { CountActionTypes } from '../actions/countActions';
+import { DECREASE_COUNT, INCREASE_COUNT } from '../actions/types';
 
 interface CountState {
   count: number;
@@ -17,6 +16,7 @@ export default function countReducer(
   switch (action.type) {
     case INCREASE_COUNT:
       // don't do state.count++
+      // return { ...state, count: state.count++ };
       return { ...state, count: state.count + 1 };
     case DECREASE_COUNT:
       return { ...state, count: state.count - 1 };
@@ -24,5 +24,3 @@ export default function countReducer(
       return state;
   }
 }
-
-export const selectCount = (state: RootReducerState) => state.count.count;
