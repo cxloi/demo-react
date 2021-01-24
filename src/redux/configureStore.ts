@@ -1,4 +1,8 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import {
+  // applyMiddleware,
+  // compose,
+  createStore,
+} from 'redux';
 
 // import monitorReducersEnhancer from "./enhancers/monitorReducers";
 // import loggerMiddleware from "./middleware/logger";

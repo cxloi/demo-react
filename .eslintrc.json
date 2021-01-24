@@ -32,6 +32,8 @@
     "object-curly-newline": "off", //airbnb lint rules conflict with prettier
     "react/jsx-one-expression-per-line": "off", // conflict with prettier
     "import/extensions": "off", // needs research: doesn't work with .ts
+    "implicit-arrow-linebreak": "off", // will conflict with prettier wrap line
+    "react/jsx-curly-newline": "off", // will conflict with prettier wrap line
     "import/prefer-default-export": "off",
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies

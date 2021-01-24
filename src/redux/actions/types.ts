@@ -1,9 +1,10 @@
 // type - redux recommends naming it as event
 
+// count types
 export const INCREASE_COUNT = 'INCREASE_COUNT';
 export const DECREASE_COUNT = 'DECREASE_COUNT';
 
-export const USER = {
-  GET_DETAILS_REQUEST: 'USER/GET_DETAILS_REQUEST',
-  GET_DETAILS_RESPONSE: 'USER/GET_DETAILS_RESPONSE',
-};
+// user types
+export const USER_LOGGED_IN_SUCCESS = 'USER_LOGGED_IN_SUCCESS';
+export const USER_LOGGED_OUT_SUCCESS = 'USER_LOGGED_OUT_SUCCESS';
+export const USER_UPDATE_DETAILS = 'USER_UPDATE_DETAILS';
