@@ -40,7 +40,7 @@ const userReducer = (state = INITIAL_STATE, action: UserActionTypes): UserState 
         userDetails: action.payload,
       };
     default:
-      return { ...state };
+      return state;
   }
 };
 

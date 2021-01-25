@@ -1,25 +1,28 @@
-import {
-  // applyMiddleware,
-  // compose,
-  createStore,
-} from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
+import { createLogger } from 'redux-logger';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 
-// import monitorReducersEnhancer from "./enhancers/monitorReducers";
-// import loggerMiddleware from "./middleware/logger";
+import Config from '../Config';
 import { rootReducer } from './reducers';
 
-export default function configureStore() {
-  // const middlewares = [loggerMiddleware, thunkMiddleware]
-  // const middlewareEnhancer = applyMiddleware(...middlewares)
-
-  // const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
-  // const composedEnhancers = compose(...enhancers)
-
-  const store = createStore(
-    rootReducer,
-    // preloadedState,
-    // composedEnhancers
-  );
-
-  return store;
+const middlewares = [];
+if (Config.isDebuggable) {
+  middlewares.push(createLogger());
 }
+
+const enhancers = compose(applyMiddleware(...middlewares));
+
+const persistConfig = {
+  key: 'root',
+  whitelist: ['user'],
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export default () => {
+  const store = createStore(persistedReducer, {}, enhancers);
+  const persistor = persistStore(store);
+  return { store, persistor };
+};
