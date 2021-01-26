@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 import { userUpdateDetails } from '../redux/actions/userActions';
 import UpdateUserProfile from './UpdateUserProfile';
 
@@ -18,7 +19,8 @@ const mockState = {
 
 const mockStore = configureStore([])(mockState);
 
-const renderComponent = () => render(<Provider store={mockStore}><UpdateUserProfile /></Provider>);
+const componentWithStore = <Provider store={mockStore}><UpdateUserProfile /></Provider>;
+const renderComponent = () => render(componentWithStore);
 
 describe('UpdateUserProfile', () => {
   test('"render update form', () => {
@@ -35,5 +37,12 @@ describe('UpdateUserProfile', () => {
 
     const actions = mockStore.getActions();
     expect(actions).toEqual([action]);
+  });
+
+  test('render snapshot', () => {
+    const tree = renderer
+      .create(componentWithStore)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

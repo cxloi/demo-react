@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render snapshot 1`] = `
+<div
+  style={
+    Object {
+      "padding": 10,
+    }
+  }
+>
+  <ul>
+    <li>
+      <a
+        data-testid="linkState"
+        href="/"
+        onClick={[Function]}
+      >
+        Store State
+      </a>
+    </li>
+    <li>
+      <a
+        data-testid="linkUpdate"
+        href="/update-user-profile"
+        onClick={[Function]}
+      >
+        Update User Profile
+      </a>
+    </li>
+  </ul>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-container-5 storybook-button storybook-button--medium MuiButton-containedPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        -
+      </span>
+    </button>
+    <div
+      style={
+        Object {
+          "width": 120,
+        }
+      }
+    >
+      COUNT: 
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-container-5 storybook-button storybook-button--medium MuiButton-containedPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        +
+      </span>
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+      }
+    }
+  >
+    <div>
+      Name: 
+      Dan Abramov
+    </div>
+    <div>
+      Age: 
+      38
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-container-5 storybook-button storybook-button--medium MuiButton-containedPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Log Out
+      </span>
+    </button>
+  </div>
+  <hr />
+  <div
+    data-testid="updatePage"
+  >
+    <h2>
+      Update User Profile
+    </h2>
+    <div>
+      <div>
+        User Name:
+      </div>
+      <input
+        aria-label="input-custom-name"
+        onChange={[Function]}
+        style={
+          Object {
+            "marginBottom": 15,
+            "marginTop": 5,
+          }
+        }
+        type="text"
+        value="Dan Abramov"
+      />
+      <div>
+        Age:
+      </div>
+      <input
+        onChange={[Function]}
+        style={
+          Object {
+            "marginBottom": 15,
+            "marginTop": 5,
+          }
+        }
+        type="number"
+        value={38}
+      />
+      <br />
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-container-5 storybook-button storybook-button--medium MuiButton-containedPrimary"
+        data-testid="updateButton"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Submit
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
