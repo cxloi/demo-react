@@ -1,8 +1,8 @@
-import { decreaseCountAction, increaseCountAction } from 'countModule/countActions';
 import { CustomButton } from 'demo-sb-react-components';
 import React, { CSSProperties } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCount } from 'redux/selectors';
+import { decreaseCountAction, increaseCountAction } from '../countActions';
 
 const styles: Record<string, CSSProperties> = {
   countContainer: {

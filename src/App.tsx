@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { CustomButton } from 'demo-sb-react-components';
 import { useDispatch, useSelector } from 'react-redux';
-import Counter from 'countModule/Components/Counter';
+import { Counter } from 'countModule';
 import { selectIsUserLoggedIn, selectUserDetails } from './redux/selectors';
 import StoreState from './pages/StoreState';
 import { userLoggedInSuccess, userLoggedOutSuccess } from './redux/actions/userActions';
