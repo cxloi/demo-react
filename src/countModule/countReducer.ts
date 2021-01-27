@@ -1,5 +1,5 @@
-import { CountActionTypes } from '../actions/countActions';
-import { DECREASE_COUNT, INCREASE_COUNT } from '../actions/types';
+import { CountActionTypes } from './countActions';
+import { DECREASE_COUNT, INCREASE_COUNT } from '../redux/actions/types';
 
 interface CountState {
   count: number;

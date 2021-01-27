@@ -1,4 +1,4 @@
-import { DECREASE_COUNT, INCREASE_COUNT } from './types';
+import { DECREASE_COUNT, INCREASE_COUNT } from 'redux/actions/types';
 
 interface IncreaseCountAction {
   type: typeof INCREASE_COUNT;

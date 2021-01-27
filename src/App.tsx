@@ -2,8 +2,8 @@ import React, { CSSProperties } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { CustomButton } from 'demo-sb-react-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCount, selectIsUserLoggedIn, selectUserDetails } from './redux/selectors';
-import { decreaseCountAction, increaseCountAction } from './redux/actions/countActions';
+import Counter from 'countModule/Components/Counter';
+import { selectIsUserLoggedIn, selectUserDetails } from './redux/selectors';
 import StoreState from './pages/StoreState';
 import { userLoggedInSuccess, userLoggedOutSuccess } from './redux/actions/userActions';
 import UpdateUserProfile from './pages/UpdateUserProfile';
@@ -33,7 +33,6 @@ const styles: Record<string, CSSProperties> = {
 };
 
 export default function App() {
-  const count = useSelector(selectCount);
   const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
   const userDetails = useSelector(selectUserDetails);
 
@@ -51,11 +50,7 @@ export default function App() {
           </li>
         </ul>
 
-        <div style={styles.countContainer}>
-          <CustomButton label="-" onClick={() => dispatch(decreaseCountAction())} />
-          <div style={styles.countTextContainer}>COUNT: {count}</div>
-          <CustomButton label="+" onClick={() => dispatch(increaseCountAction())} />
-        </div>
+        <Counter />
 
         <div style={styles.userDetailsContainer}>
           {isUserLoggedIn ? (
