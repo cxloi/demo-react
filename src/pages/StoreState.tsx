@@ -12,14 +12,18 @@ import { Theme } from 'theme/interface';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      ...theme.fonts.titleFont,
       color: theme.status.danger,
       margin: theme.spacing(2),
+      [theme.breakpoints.up('sm')]: {
+        margin: theme.spacing(4),
+      },
       '&$checked': {
         color: theme.status.danger,
       },
     },
     sub: {
-      color: theme.color.ctaBackground,
+      color: theme.colors.ctaBackground,
     },
     checked: {},
   }),

@@ -7,9 +7,22 @@ const theme2 = createMuiTheme({
   status: {
     danger: purple[400],
   },
-  color: {
+  colors: {
     ctaBackground: '#ffa726',
   },
+  fonts: {
+    titleFont: {},
+  },
 });
+
+theme2.fonts.titleFont = {
+  fontSize: '1.2rem',
+  [theme2.breakpoints.up('sm')]: {
+    fontSize: '1.8rem',
+  },
+  [theme2.breakpoints.up('md')]: {
+    fontSize: '2.4rem',
+  },
+};
 
 export default theme2;
