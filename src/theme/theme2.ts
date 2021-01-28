@@ -8,7 +8,7 @@ const theme2 = createMuiTheme({
     danger: purple[400],
   },
   color: {
-    'cta-background': '#ffa726',
+    ctaBackground: '#ffa726',
   },
 });
 

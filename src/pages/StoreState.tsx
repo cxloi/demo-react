@@ -4,11 +4,12 @@ import { selectWholeStoreState } from 'redux/selectors';
 import {
   makeStyles,
   createStyles,
-  Theme as AugmentedTheme,
+  // Theme as AugmentedTheme,
   useTheme,
 } from '@material-ui/core/styles';
+import { Theme } from 'theme/interface';
 
-const useStyles = makeStyles((theme: AugmentedTheme) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       color: theme.status.danger,
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme: AugmentedTheme) =>
       },
     },
     sub: {
-      color: theme.color['cta-background'],
+      color: theme.color.ctaBackground,
     },
     checked: {},
   }),
