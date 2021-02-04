@@ -1,6 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { CustomButton } from "demo-sb-react-components";
+import React, { CSSProperties } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { CustomButton } from 'demo-sb-react-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { Counter } from 'countModule';
+import { selectIsUserLoggedIn, selectUserDetails } from './redux/selectors';
+import StoreState from './pages/StoreState';
+import { userLoggedInSuccess, userLoggedOutSuccess } from './redux/actions/userActions';
+import UpdateUserProfile from './pages/UpdateUserProfile';
 import ResponsiveList from './component/ResponsiveList';
 
 // This site has 3 pages, all of which are rendered
@@ -12,25 +18,55 @@ import ResponsiveList from './component/ResponsiveList';
 // making sure things like the back button and bookmarks
 // work properly.
 
+const styles: Record<string, CSSProperties> = {
+  countContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  countTextContainer: {
+    width: 120,
+  },
+  userDetailsContainer: {
+    marginTop: 10,
+    marginBottom: 10,
+  },
+};
+
 export default function App() {
+  const isUserLoggedIn = useSelector(selectIsUserLoggedIn);
+  const userDetails = useSelector(selectUserDetails);
+
+  const dispatch = useDispatch();
+
   return (
     <Router>
-      <div>
+      <div style={{ padding: 10 }}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Store State</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/update-user-profile">Update User Profile</Link>
           </li>
         </ul>
 
-        <CustomButton
-          label="Custom"
-        />
+        <Counter />
+
+        <div style={styles.userDetailsContainer}>
+          {isUserLoggedIn ? (
+            <>
+              <div>Name: {userDetails.userName}</div>
+              <div>Age: {userDetails.age}</div>
+              <CustomButton label="Log Out" onClick={() => dispatch(userLoggedOutSuccess())} />
+            </>
+          ) : (
+              <CustomButton
+                label="Log In"
+                onClick={() => dispatch(userLoggedInSuccess('dan-abramov-user-id'))}
+              />
+            )}
+        </div>
 
         <hr />
 
@@ -43,44 +79,14 @@ export default function App() {
         */}
         <Switch>
           <Route exact path="/">
-            <Home />
+            <StoreState />
           </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/update-user-profile">
+            <UpdateUserProfile />
             <ResponsiveList />
           </Route>
         </Switch>
       </div>
     </Router>
-  );
-}
-
-// You can think of these components as "pages"
-// in your app.
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
   );
 }
