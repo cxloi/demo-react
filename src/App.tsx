@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CustomButton } from "demo-sb-react-components";
+import ResponsiveList from './component/ResponsiveList';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -49,6 +50,7 @@ export default function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+            <ResponsiveList />
           </Route>
         </Switch>
       </div>
