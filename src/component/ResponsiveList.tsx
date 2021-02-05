@@ -81,10 +81,13 @@ const ResponsiveList = () => {
       <h4>External grid library</h4>
       <Container fluid>
         <Row>
-          <Col xl={12} lg={12} md={18} sm={24} xs={24}>
+          <Col xl={8} lg={8} md={12} sm={12} xs={24}>
             <Paper className={classes.paper0}>span 6</Paper>
           </Col>
-          <Col xl={12} lg={12} md={18} sm={24} xs={24}>
+          <Col xl={8} lg={8} md={12} sm={12} xs={24}>
+            <Paper className={classes.paper0}>span 6</Paper>
+          </Col>
+          <Col xl={8} lg={8} md={12} sm={12} xs={24}>
             <Paper className={classes.paper0}>span 6</Paper>
           </Col>
         </Row>
