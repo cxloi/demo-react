@@ -10,6 +10,20 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
 
 const { store, persistor } = configureStore();
+// declare module '@material-ui/core/styles/createMuiTheme' {
+//   // eslint-disable-next-line no-unused-vars
+//   export interface Theme {
+//     status: {
+//       danger: string;
+//     };
+//   }
+//   // eslint-disable-next-line no-unused-vars
+//   export interface ThemeOptions {
+//     status?: {
+//       danger?: string;
+//     };
+//   }
+// }
 
 ReactDOM.render(
   <React.StrictMode>
