@@ -2,6 +2,7 @@ import React, { CSSProperties, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { CustomButton } from 'demo-sb-react-components';
 import { useDispatch, useSelector } from 'react-redux';
+import { setConfiguration } from 'react-grid-system';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { decreaseCountAction, increaseCountAction } from 'countModule';
 import { selectCount, selectIsUserLoggedIn, selectUserDetails } from './redux/selectors';
@@ -41,6 +42,20 @@ export default function App() {
     }, 3000);
     return () => clearInterval(intervalID);
   });
+
+  useEffect(() => {
+    setConfiguration({
+      maxScreenClass: 'xl',
+      breakpoints: [
+        theme.breakpoints.values.sm,
+        theme.breakpoints.values.md,
+        theme.breakpoints.values.lg,
+        theme.breakpoints.values.xl,
+      ],
+      gutterWidth: 0,
+      gridColumns: 24,
+    });
+  }, [theme]);
 
   return (
     <ThemeProvider theme={theme}>

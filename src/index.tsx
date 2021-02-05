@@ -4,18 +4,10 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { setConfiguration } from 'react-grid-system';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
-
-setConfiguration({
-  maxScreenClass: 'xl',
-  breakpoints: [600, 960, 1280, 1920],
-  gutterWidth: 0,
-  gridColumns: 24,
-});
 
 const { store, persistor } = configureStore();
 // declare module '@material-ui/core/styles/createMuiTheme' {
