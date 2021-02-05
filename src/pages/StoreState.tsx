@@ -4,15 +4,16 @@ import { selectWholeStoreState } from 'redux/selectors';
 import {
   makeStyles,
   createStyles,
-  // Theme as AugmentedTheme,
+  Theme as AugmentedTheme,
   useTheme,
 } from '@material-ui/core/styles';
-import { Theme } from 'theme/interface';
+// import { Theme } from 'theme/interface';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme: AugmentedTheme) =>
   createStyles({
     root: {
-      ...theme.fonts.titleFont,
+      // ...theme.fonts.titleFont,
+      ...theme.typography.h4,
       color: theme.status.danger,
       margin: theme.spacing(2),
       [theme.breakpoints.up('sm')]: {

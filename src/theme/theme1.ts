@@ -15,6 +15,16 @@ const theme1 = createMuiTheme({
   },
 });
 
+theme1.typography.h4 = {
+  fontSize: '1.2rem',
+  [theme1.breakpoints.up('sm')]: {
+    fontSize: '1.8rem',
+  },
+  [theme1.breakpoints.up('md')]: {
+    fontSize: '2.4rem',
+  },
+};
+
 theme1.fonts.titleFont = {
   fontSize: '1.2rem',
   [theme1.breakpoints.up('sm')]: {
