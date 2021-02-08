@@ -7,27 +7,26 @@ import {
   Theme as AugmentedTheme,
   useTheme,
 } from '@material-ui/core/styles';
-// import { Theme } from 'theme/interface';
 
-const useStyles = makeStyles((theme: AugmentedTheme) =>
-  createStyles({
-    root: {
-      // ...theme.fonts.titleFont,
-      ...theme.typography.h4,
-      color: theme.status.danger,
-      margin: theme.spacing(2),
-      [theme.breakpoints.up('sm')]: {
-        margin: theme.spacing(4),
-      },
-      '&$checked': {
+const useStyles = makeStyles(
+  (theme: AugmentedTheme) =>
+    createStyles({
+      root: {
+        ...theme.typography.h4,
         color: theme.status.danger,
+        margin: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+          margin: theme.spacing(4),
+        },
+        '&$checked': {
+          color: theme.status.danger,
+        },
       },
-    },
-    sub: {
-      color: theme.colors.ctaBackground,
-    },
-    checked: {},
-  }),
+      sub: {
+        color: theme.colors.ctaBackground,
+      },
+      checked: {},
+    }),
   // eslint-disable-next-line function-paren-newline
 );
 
@@ -38,10 +37,10 @@ const StoreState = () => {
 
   return (
     <div>
-      <h2 className={classes.root}>
-        {`Store State (${themeObj.name})`}
-      </h2>
-      <div className={classes.sub} style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(wholeStoreState, null, 4)}</div>
+      <h2 className={classes.root}>{`Store State (${themeObj.name})`}</h2>
+      <div className={classes.sub} style={{ whiteSpace: 'pre-wrap' }}>
+        {JSON.stringify(wholeStoreState, null, 4)}
+      </div>
     </div>
   );
 };

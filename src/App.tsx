@@ -66,13 +66,12 @@ export default function App() {
                 <div>Age: {userDetails.age}</div>
                 <CustomButton label="Log Out" onClick={() => dispatch(userLoggedOutSuccess())} />
               </>
-            )
-              : (
-                <CustomButton
-                  label="Log In"
-                  onClick={() => dispatch(userLoggedInSuccess('dan-abramov-user-id'))}
-                />
-              )}
+            ) : (
+              <CustomButton
+                label="Log In"
+                onClick={() => dispatch(userLoggedInSuccess('dan-abramov-user-id'))}
+              />
+            )}
           </div>
 
           <hr />

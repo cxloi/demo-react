@@ -32,11 +32,7 @@ const useStyles = makeStyles((theme) => ({
 const ThreeColumnGrid = () => {
   const classes = useStyles();
   return (
-    <Grid
-      container
-      spacing={5}
-      className={classes.containerBorder}
-    >
+    <Grid container spacing={5} className={classes.containerBorder}>
       <Grid item xl={4} lg={4} md={6} sm={6} xs={12}>
         <Paper className={classes.paper2}>Card A</Paper>
       </Grid>
@@ -60,12 +56,7 @@ const ResponsiveList = () => {
 
       <h4>justify center</h4>
       <Grid item xs={12}>
-        <Grid
-          container
-          justify="center"
-          spacing={2}
-          className={classes.containerBorder}
-        >
+        <Grid container justify="center" spacing={2} className={classes.containerBorder}>
           {[0, 1, 2].map((value) => (
             <Grid key={value} item>
               <Paper className={classes.paper} />
