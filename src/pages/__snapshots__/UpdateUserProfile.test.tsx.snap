@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UpdateUserProfile render snapshot 1`] = `
+<div
+  data-testid="updatePage"
+>
+  <h2>
+    Update User Profile
+  </h2>
+  <div>
+    <div>
+      User Name:
+    </div>
+    <input
+      aria-label="input-custom-name"
+      onChange={[Function]}
+      style={
+        Object {
+          "marginBottom": 15,
+          "marginTop": 5,
+        }
+      }
+      type="text"
+      value="Dan Abramov"
+    />
+    <div>
+      Age:
+    </div>
+    <input
+      onChange={[Function]}
+      style={
+        Object {
+          "marginBottom": 15,
+          "marginTop": 5,
+        }
+      }
+      type="number"
+      value={38}
+    />
+    <br />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-container-3 storybook-button storybook-button--medium MuiButton-containedPrimary"
+      data-testid="updateButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Submit
+      </span>
+    </button>
+  </div>
+</div>
+`;

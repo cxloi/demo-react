@@ -46,10 +46,10 @@ export default function App() {
         <div style={{ padding: 10 }}>
           <ul>
             <li>
-              <Link to="/">Store State</Link>
+              <Link data-testid="linkState" to="/">Store State</Link>
             </li>
             <li>
-              <Link to="/update-user-profile">Update User Profile</Link>
+              <Link data-testid="linkUpdate" to="/update-user-profile">Update User Profile</Link>
             </li>
           </ul>
 
@@ -66,12 +66,14 @@ export default function App() {
                 <div>Age: {userDetails.age}</div>
                 <CustomButton label="Log Out" onClick={() => dispatch(userLoggedOutSuccess())} />
               </>
-            ) : (
-              <CustomButton
-                label="Log In"
-                onClick={() => dispatch(userLoggedInSuccess('dan-abramov-user-id'))}
-              />
-            )}
+            )
+              : (
+                <CustomButton
+                  label="Log In"
+                  onClick={() => dispatch(userLoggedInSuccess('dan-abramov-user-id'))}
+                />
+              )
+            }
           </div>
 
           <hr />

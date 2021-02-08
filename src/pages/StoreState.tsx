@@ -30,13 +30,13 @@ const useStyles = makeStyles(
   // eslint-disable-next-line function-paren-newline
 );
 
-const StoreState = () => {
+const StoreState: React.FC = () => {
   const wholeStoreState = useSelector(selectWholeStoreState);
   const classes = useStyles();
   const themeObj = useTheme();
 
   return (
-    <div>
+    <div data-testid="storeStatePage">
       <h2 className={classes.root}>{`Store State (${themeObj.name})`}</h2>
       <div className={classes.sub} style={{ whiteSpace: 'pre-wrap' }}>
         {JSON.stringify(wholeStoreState, null, 4)}

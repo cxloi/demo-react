@@ -1,9 +1,9 @@
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import renderer from 'react-test-renderer';
-import App from './App';
+import StoreState from './StoreState';
 
 const mockState = {
   count: 1,
@@ -17,24 +17,16 @@ const mockState = {
 };
 const mockStore = configureStore([])(mockState);
 
-const componentWithStore = <Provider store={mockStore}><App /></Provider>;
+const componentWithStore = <Provider store={mockStore}><StoreState /></Provider>;
 const renderComponent = () => render(componentWithStore);
 
-describe('App', () => {
-  test('"Store State" link will render store state', () => {
+describe('StoreState', () => {
+  it('should render the whole store', () => {
     const { getByTestId } = renderComponent();
-
-    fireEvent.click(getByTestId('linkState'));
     const textElement = getByTestId('storeStatePage').textContent;
+    expect(textElement).toContain('"count": 1,');
     expect(textElement).toContain('"userName": "Dan Abramov"');
-  });
-
-  test('"Update User Profile" link will render update form', () => {
-    const { getByTestId } = renderComponent();
-
-    fireEvent.click(getByTestId('linkUpdate'));
-    const textElement = getByTestId('updatePage').textContent;
-    expect(textElement).toContain('Update User Profile');
+    expect(textElement).toContain('"age": 38');
   });
 
   test('render snapshot', () => {

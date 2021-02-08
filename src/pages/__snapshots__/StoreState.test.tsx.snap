@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoreState render snapshot 1`] = `
+<div
+  data-testid="storeStatePage"
+>
+  <h2>
+    Store State
+  </h2>
+  <div
+    style={
+      Object {
+        "whiteSpace": "pre-wrap",
+      }
+    }
+  >
+    {
+    "count": 1,
+    "user": {
+        "isLoggedIn": true,
+        "userDetails": {
+            "userName": "Dan Abramov",
+            "age": 38
+        }
+    }
+}
+  </div>
+</div>
+`;
