@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Row, Col } from 'react-grid-system';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Card from './Card';
@@ -59,41 +58,7 @@ const ResponsiveList = () => {
       <h2>List Title</h2>
       <br />
 
-      {/* xl={4} lg={4} md={6} sm={6} xs={12} */}
-      <h4>External grid library for tablet</h4>
-      <Container fluid>
-        <Row>
-          <Col xl={12} lg={12} md={18} sm={24} xs={24}>
-            <Paper className={classes.paper0}>column 1</Paper>
-          </Col>
-          <Col xl={6} lg={6} md={9} sm={18} xs={18}>
-            <Paper className={classes.paper0}>column 2</Paper>
-          </Col>
-          <Col xl={4} lg={4} md={6} sm={12} xs={12}>
-            <Paper className={classes.paper0}>column 3</Paper>
-          </Col>
-          <Col xl={2} lg={2} md={3} sm={6} xs={6}>
-            <Paper className={classes.paper0}>col</Paper>
-          </Col>
-        </Row>
-      </Container>
-
-      <h4>External grid library</h4>
-      <Container fluid>
-        <Row>
-          <Col xl={8} lg={8} md={12} sm={12} xs={24}>
-            <Paper className={classes.paper0}>span 6</Paper>
-          </Col>
-          <Col xl={8} lg={8} md={12} sm={12} xs={24}>
-            <Paper className={classes.paper0}>span 6</Paper>
-          </Col>
-          <Col xl={8} lg={8} md={12} sm={12} xs={24}>
-            <Paper className={classes.paper0}>span 6</Paper>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* <h4>justify center</h4>
+      <h4>justify center</h4>
       <Grid item xs={12}>
         <Grid
           container
@@ -107,7 +72,7 @@ const ResponsiveList = () => {
             </Grid>
           ))}
         </Grid>
-      </Grid> */}
+      </Grid>
 
       <h4>material ui grid</h4>
       <ThreeColumnGrid />

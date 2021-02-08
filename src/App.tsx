@@ -1,16 +1,13 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { CustomButton } from 'demo-sb-react-components';
+import { CustomButton, Theme1, Theme2 } from 'demo-sb-react-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { setConfiguration } from 'react-grid-system';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { decreaseCountAction, increaseCountAction } from 'countModule';
 import { selectCount, selectIsUserLoggedIn, selectUserDetails } from './redux/selectors';
 import StoreState from './pages/StoreState';
 import { userLoggedInSuccess, userLoggedOutSuccess } from './redux/actions/userActions';
 import UpdateUserProfile from './pages/UpdateUserProfile';
-import theme1 from './theme/theme1';
-import theme2 from './theme/theme2';
 import ResponsiveList from './component/ResponsiveList';
 
 const styles: Record<string, CSSProperties> = {
@@ -29,7 +26,7 @@ const styles: Record<string, CSSProperties> = {
 };
 
 export default function App() {
-  const [theme, setTheme] = useState(theme1);
+  const [theme, setTheme] = useState(Theme1);
 
   const dispatch = useDispatch();
   const count = useSelector(selectCount);
@@ -38,24 +35,10 @@ export default function App() {
 
   useEffect(() => {
     const intervalID = setInterval(() => {
-      setTheme(theme === theme1 ? theme2 : theme1);
+      setTheme(theme === Theme1 ? Theme2 : Theme1);
     }, 3000);
     return () => clearInterval(intervalID);
   });
-
-  useEffect(() => {
-    setConfiguration({
-      maxScreenClass: 'xl',
-      breakpoints: [
-        theme.breakpoints.values.sm,
-        theme.breakpoints.values.md,
-        theme.breakpoints.values.lg,
-        theme.breakpoints.values.xl,
-      ],
-      gutterWidth: 0,
-      gridColumns: 24,
-    });
-  }, [theme]);
 
   return (
     <ThemeProvider theme={theme}>
