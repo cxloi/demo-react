@@ -14,7 +14,7 @@ const USER_FORM_ACTIONS = {
   UPDATE: 'USER_FORM_ACTIONS/UPDATE',
 };
 
-interface UserDetailsFormState extends UserDetails { }
+interface UserDetailsFormState extends UserDetails {}
 
 interface UserDetailsFormAction {
   type: typeof USER_FORM_ACTIONS.UPDATE;
@@ -80,12 +80,15 @@ const UpdateUserProfile = () => {
             />
 
             <br />
-            <CustomButton data-testid="updateButton" label="Submit" onClick={() => dispatch(userUpdateDetails(state))} />
+            <CustomButton
+              data-testid="updateButton"
+              label="Submit"
+              onClick={() => dispatch(userUpdateDetails(state))}
+            />
           </>
-        )
-          : (
-            <div>Please log in to update user profile.</div>
-          )}
+        ) : (
+          <div>Please log in to update user profile.</div>
+        )}
       </div>
     </div>
   );

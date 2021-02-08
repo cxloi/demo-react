@@ -17,7 +17,11 @@ const mockState = {
 };
 const mockStore = configureStore([])(mockState);
 
-const componentWithStore = <Provider store={mockStore}><App /></Provider>;
+const componentWithStore = (
+  <Provider store={mockStore}>
+    <App />
+  </Provider>
+);
 const renderComponent = () => render(componentWithStore);
 
 describe('App', () => {
@@ -38,9 +42,7 @@ describe('App', () => {
   });
 
   test('render snapshot', () => {
-    const tree = renderer
-      .create(componentWithStore)
-      .toJSON();
+    const tree = renderer.create(componentWithStore).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
