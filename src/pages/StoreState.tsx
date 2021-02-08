@@ -19,11 +19,11 @@ const useStyles = makeStyles(
           margin: theme.spacing(4),
         },
         '&$checked': {
-          color: theme.status.danger,
+          // color: theme.status.danger,
         },
       },
       sub: {
-        color: theme.colors.ctaBackground,
+        // color: theme.colors.ctaBackground,
       },
       checked: {},
     }),

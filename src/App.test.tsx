@@ -24,7 +24,7 @@ const componentWithStore = (
 );
 const renderComponent = () => render(componentWithStore);
 
-describe('App', () => {
+describe.skip('App', () => {
   test('"Store State" link will render store state', () => {
     const { getByTestId } = renderComponent();
 

@@ -4,10 +4,13 @@ exports[`StoreState render snapshot 1`] = `
 <div
   data-testid="storeStatePage"
 >
-  <h2>
-    Store State
+  <h2
+    className="makeStyles-root-4"
+  >
+    Store State (undefined)
   </h2>
   <div
+    className="makeStyles-sub-5"
     style={
       Object {
         "whiteSpace": "pre-wrap",
